@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="card" v-show="show">
+    <div class="card,text-left">
       <div class="card-body">
-        <h5 class="card-title">{{Title}}</h5>
-        <p class="card-text" v-show="expand">{{Description}}</p>
-        <button class="btn btn-primary" @click="expand = true" v-show="!expand">See full description</button>
-        <button class="btn btn-primary" @click="expand = false" v-show="expand">Hide description</button>
+        <div class="card-header">  
+        <h3 class="text-left">{{Title}}</h3>
+        </div>
+        <p class="card-text" >{{Description}}</p>
       </div>
     </div>
   </div>
