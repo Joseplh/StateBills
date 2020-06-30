@@ -5,9 +5,9 @@
 import java.io.*;
 
 public class MainTesting {
-	
 	public static void main(String[] args) {
 		//load .csv file into memory
+		billList list = new billList();
 		try {
 			File file = new File("C:\\Users\\Joseph\\workspace\\BillTrackerDB\\src\\inputFile.csv");
 		
@@ -130,6 +130,9 @@ public class MainTesting {
 				System.out.println(desc);
 				System.out.println(IDst);
 				System.out.println(ID);
+				
+				/*This section takes the parsed information and adds it into the linked list database.*/
+				
 			}
 			br.close();
 		} catch (FileNotFoundException e1) {
