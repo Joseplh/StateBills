@@ -7,3 +7,6 @@ Only change the number at the end for the requested year.  It only goes back to 
 
 https://smallbusiness.chron.com/create-display-access-database-data-49070.html
 This article answeres the question, "Can you use Access to build webpages".  This provides a proff of concept for the program.
+
+https://www.baeldung.com/java-download-file
+Java example of downloading a file from online and using it within a java program.
