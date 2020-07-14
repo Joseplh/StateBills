@@ -1,5 +1,9 @@
 Joseph Maxwell
 
+Valuable links
+https://nebraskalegislature.gov/bills/search_by_date.php?SessionDay=2020&print=csv
+https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=42429
+
 https://nebraskalegislature.gov/bills/search_by_date.php?SessionDay=2020
 This link was provided by Theresa Ramos who works in Nebraska's internal support.
 This link provides a webpage where a .csv file can be downloaded for the session year.
@@ -10,3 +14,6 @@ This article answeres the question, "Can you use Access to build webpages".  Thi
 
 https://www.baeldung.com/java-download-file
 Java example of downloading a file from online and using it within a java program.
+
+
+
