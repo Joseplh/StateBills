@@ -4,7 +4,7 @@
  * This status within a linked list is another simpler linked list that holds the status and date of change.*/
 import java.io.*;
 
-public class MainTesting {
+public class CSVBuilder {
 	public static void main(String[] args) {
 		//load .csv file into memory
 		billList list = new billList();

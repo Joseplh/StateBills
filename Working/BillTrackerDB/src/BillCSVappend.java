@@ -1,7 +1,13 @@
 /*This java program is designed to append .csv files from the nebraska state legislature to a compiled table.
  * https://nebraskalegislature.gov/bills/search_by_date.php?SessionDay=2020  This link provides a list for the annual
  * session.*/
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class BillCSVappend {
