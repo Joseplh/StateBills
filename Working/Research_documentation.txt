@@ -15,5 +15,8 @@ This article answeres the question, "Can you use Access to build webpages".  Thi
 https://www.baeldung.com/java-download-file
 Java example of downloading a file from online and using it within a java program.
 
+https://alvinalexander.com/java/edu/pj/jdbc/jdbc0002/
+Adding data to a sql table.
+
 
 
