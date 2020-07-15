@@ -18,5 +18,8 @@ Java example of downloading a file from online and using it within a java progra
 https://alvinalexander.com/java/edu/pj/jdbc/jdbc0002/
 Adding data to a sql table.
 
+https://www.youtube.com/watch?v=IWuuLuoKlLo
+Java JDBC tutorial part 1.  This will allow me to automatically modify the database using java.  
+
 
 
