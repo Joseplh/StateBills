@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class BillCSVappend {
-	public static void main(String[] args) throws IOException {
+	public BillCSVappend() throws IOException {
 		//Create variables
 		String fileYear;//manually input by the user, this is the year for the file
 		String fileToAppend;//This is the full link to the file that is to be appended to the combined list

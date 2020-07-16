@@ -5,11 +5,10 @@
 import java.io.*;
 
 public class CSVBuilder {
-	public static void main(String[] args) {
+	public CSVBuilder() {
 		//load .csv file into memory
-		billList list = new billList();
 		try {
-			File file = new File("C:\\Users\\Joseph\\workspace\\BillTrackerDB\\src\\inputFile.csv");
+			File file = new File("downloadFile.csv");
 		
 			BufferedReader br;
 		
