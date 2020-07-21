@@ -56,7 +56,7 @@ public class CSVBuilder {
 								break;
 							case ',':
 								if(ignoreComma)
-									intro += 'c';
+									intro += ',';
 								else
 									stage = 2;
 								break;
@@ -74,7 +74,7 @@ public class CSVBuilder {
 									break;
 								case ',':
 									if(ignoreComma)
-										stat += 'c';
+										stat += ',';
 									else
 										stage = 3;
 									break;
@@ -92,7 +92,7 @@ public class CSVBuilder {
 									break;
 								case ',':
 									if(ignoreComma)
-										desc += 'c';
+										desc += ',';
 									else
 										stage = 4;
 									break;
@@ -110,7 +110,7 @@ public class CSVBuilder {
 									break;
 								case ',':
 									if(ignoreComma)
-										IDst += 'c';
+										IDst += ',';
 									else
 										stage = 5;
 									break;
