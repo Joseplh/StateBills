@@ -23,7 +23,7 @@ public class Main {
 	private static final String jdbcDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	  
 	//The JDBC connection URL which allows for Windows authentication is defined below.
-	private static final String jdbcURL = "jdbc:sqlserver://127.0.0.1:1433;"
+	private static String jdbcURL = "jdbc:sqlserver://127.0.0.1:1433;"
             + "database=TestingDB;"
             + "user=javaUser;"
             + "password=;"
@@ -32,15 +32,37 @@ public class Main {
             + "loginTimeout=30;";
 	//used in the sql insert to create and hold the connection to the database
 	private static Connection databaseConnection= null;
-			
+	private static String date;
+	private static boolean use = false;
 			
 			
 			
 			//"jdbc:sqlserver://localhost:1433;databasename=TestingDB;integratedSecurity=true;";
 	//To make Windows authenticaion work we have to set the path to sqljdbc_auth.dll at the command line
 	public static void main(String[] args) {
+		//Stage 0: Setup config file
+		try {
+			File file = new File("config.ini");
+			BufferedReader br;		
+			br = new BufferedReader(new FileReader(file));
+			if(br.readLine().matches("custom=true")) {
+				System.out.println("Input is custom from config.ini");
+				jdbcURL = br.readLine() //"jdbc:sqlserver://127.0.0.1:1433;"
+						+ br.readLine() //"database=TestingDB;"
+						+ br.readLine() //"user=javaUser;"
+						+ br.readLine() //"password=;"
+						+ br.readLine() //"encrypt=false;"
+						+ br.readLine() //"trustServerCertificate=true;"
+						+ br.readLine();//"loginTimeout=30;"
+				if(((date) = br.readLine()) != null) {
+					System.out.println("date:"+date);use = true;}
+				br.close();
+			}
+		}catch(Exception err) {
+			
+		}
 		//Stage 1: Download the daily .csv file
-		//Downloader();
+		Downloader();
 		//System.out.print(currentDate());
 		
 		//Stage 2: push new data to database
@@ -82,7 +104,7 @@ public class Main {
 
 	}
 	public static void Downloader() {
-		try (BufferedInputStream in = new BufferedInputStream(new URL("https://nebraskalegislature.gov/bills/search_by_date.php?SessionDay="+currentDate()+"&print=csv").openStream());
+		try (BufferedInputStream in = new BufferedInputStream(new URL("https://nebraskalegislature.gov/bills/search_by_date.php?SessionDay="+currentDate(use)+"&print=csv").openStream());
 			FileOutputStream fileOutputStream = new FileOutputStream("download.csv")) {
 		    byte dataBuffer[] = new byte[1024];
 		    int bytesRead;
@@ -94,7 +116,9 @@ public class Main {
 		    // handle exception
 		}
 	}
-	public static String currentDate() {
+	public static String currentDate(boolean use) {
+		if(use == true)
+			return date;
 		Date dNow = new Date( );
 	      SimpleDateFormat ft = 
 	      new SimpleDateFormat ("yyyy-MM-dd");
@@ -259,8 +283,8 @@ public class Main {
 					//System.out.print(" desc:"+desc);
 					//System.out.print(" IDst:"+IDst);
 					//System.out.print(" ID:"+ID+"\n");
-					System.out.println("INSERT INTO CombinedTable VALUES ('"+doc+"', '"+intro+"', '"+stat+"', '"+desc+"', "+ID+", '"+currentDate()+"')");
-					insertSQL("INSERT INTO CombinedTable VALUES ('"+doc+"', '"+intro+"', '"+stat+"', '"+desc+"', "+ID+", '"+currentDate()+"')");
+					System.out.println("INSERT INTO CombinedTable VALUES ('"+doc+"', '"+intro+"', '"+stat+"', '"+desc+"', "+ID+", '"+currentDate(use)+"')");
+					insertSQL("INSERT INTO CombinedTable VALUES ('"+doc+"', '"+intro+"', '"+stat+"', '"+desc+"', "+ID+", '"+currentDate(use)+"')");
 					doc = "";
 					intro = "";
 					stat = "";
