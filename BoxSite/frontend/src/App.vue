@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <!--<div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:10px">
       <h1 class="navbar-brand">Nebraska State Legislature Bills</h1>
     </nav>
@@ -8,17 +8,23 @@
           <ListItem v-for="item in bills" :key="item" :Title="item.title" :Description="item.description"/>
         </ul>
       </div>
+  </div>-->
+  <div>
+    {{info}}
   </div>
 </template>
 
 <script>
-import ListItem from './components/ListItem.vue'
+//import ListItem from './components/ListItem.vue'
 
 export default {
   name: 'App',
-  components: {
-    ListItem
+  props: {
+    info: String
   },
+  //components: {
+    //ListItem
+  //},
   data() {
     return {
       
@@ -36,6 +42,7 @@ export default {
     ]
     };
   }
+  
 }
 </script>
 
