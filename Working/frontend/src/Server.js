@@ -8,10 +8,10 @@ app.get('/', function (req, res) {
 
     // config for your database
     var config = {//////////////////////////////////////////////////////////////You will need to change these to the credential for the server
-        user: '',
+        user: 'javaUser',
         password: '',
         server: 'localhost', 
-        database: 'Dev' ///////////////////////////////////////////////////////////////////////
+        database: 'StateBills' ///////////////////////////////////////////////////////////////////////
     };
 
     // connect to your database
@@ -23,7 +23,8 @@ app.get('/', function (req, res) {
         var request = new sql.Request();
            
         // query to the database and get the records
-        request.query('select * from CombinedTables Where Document=LB310A', function (err, recordset) {
+        //request.query('select * from CombinedTable Where Document=LB310A', function (err, recordset) {
+        request.query('select * from CombinedTable', function (err, recordset) {    
             
             if (err) console.log(err)
 
