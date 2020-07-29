@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
     var config = {//////////////////////////////////////////////////////////////You will need to change these to the credential for the server
         user: 'javaUser',
         password: '',
-        server: 'localhost', 
+        server: '192.168.1.73', 
         database: 'StateBills' ///////////////////////////////////////////////////////////////////////
     };
 
