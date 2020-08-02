@@ -1,7 +1,10 @@
-
+const cors = require('cors')
 var express = require('express');
 var app = express();
 
+app.use(cors({
+        credentials: true
+}))
 app.get('/', function (req, res) {
    
     var sql = require("mssql");
@@ -23,7 +26,7 @@ app.get('/', function (req, res) {
         var request = new sql.Request();
            
         // query to the database and get the records
-        request.query('select * from CombinedTable Where Document=\'LB310A\'', function (err, recordset) {
+        request.query('SELECT TOP 10 * from CombinedTable', function (err, recordset) {
         //request.query('select * from CombinedTable', function (err, recordset) {    
             
             if (err) console.log(err)
@@ -37,6 +40,6 @@ app.get('/', function (req, res) {
 
 var server = app.listen(5000, function () {
     console.log('Server is running..');
-    console.log('Go to localhost:5000 to check connection')
+    
 });
 
