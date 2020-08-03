@@ -26,13 +26,8 @@ app.get('/', function (req, res) {
         var request = new sql.Request();
            
         // query to the database and get the records
-<<<<<<< HEAD:Working/frontend/src/Server.js
-        //request.query('select * from CombinedTable Where Document=\'LB310A\'', function (err, recordset) {
-        request.query('select * from CombinedTable where Description LIKE \'%Fish%\'', function (err, recordset) {    
-=======
         request.query('SELECT TOP 10 * from CombinedTable', function (err, recordset) {
         //request.query('select * from CombinedTable', function (err, recordset) {    
->>>>>>> eb5de9cb062582b5b1054af3f9d759ec05275bf7:Working/frontend/Server.js
             
             if (err) console.log(err)
 
