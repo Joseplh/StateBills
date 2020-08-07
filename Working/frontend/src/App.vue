@@ -5,7 +5,7 @@
     </nav>
     <div class="col-sm">
         <ul>
-          <ListItem v-for="item in bills" :key="item" :Title="item.title" :Description="item.description"/>
+          <ListItem v-for="item in bills.recordset" :key="item.DocumentID" :Title="item.Document" :Description="item.Description"/>
         </ul>
       </div>
   </div>
@@ -25,10 +25,7 @@ export default {
   },
   data() {
     return {
-      
-      bills: [
-      { title: 'Loading', description: 'Loading' }
-    ]
+      bills: []
     };
   },
   methods:{

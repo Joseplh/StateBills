@@ -3,13 +3,13 @@
     <div class="card,text-left">
       <div class="card-body">
         <div class="card-header" style="margin-bottom:5px">  
-          <h4 class="text-left">{{Title}}</h4>
+          <h5 class="text-left">{{Title}}</h5>
         </div>
           <div class="float-right" style ="margin-left:5px">
             <b-button variant="outline-primary" v-on:click= "show">{{this.message}}</b-button>
           </div>
         
-        <p class="card-text" v-show="display">{{Description}}</p>
+        <h5 class="card-text" v-show="display">{{Description}}</h5>
       </div>
     </div>
   </div>

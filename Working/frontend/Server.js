@@ -5,6 +5,9 @@ var app = express();
 app.use(cors({
         credentials: true
 }))
+let bills = {
+    
+}
 app.get('/', function (req, res) {
    
     var sql = require("mssql");
@@ -16,7 +19,8 @@ app.get('/', function (req, res) {
         server: '192.168.1.73', 
         database: 'StateBills' ///////////////////////////////////////////////////////////////////////
     };
-
+    //192.168.1.73
+    //70.171.162.251:1945
     // connect to your database
     sql.connect(config, function (err) {
     
