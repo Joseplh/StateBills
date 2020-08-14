@@ -5,13 +5,16 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "serverStart": "node Server.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "dns": "^0.2.2",
     "express": "^4.17.1",
     "mssql": "^6.2.1",
     "vue": "^2.6.11"
@@ -37,7 +40,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-console": "off",
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": [
     "> 1%",
