@@ -31,7 +31,7 @@
       </select>
     </div>  
     <div class="form-group col">
-      <button type="submit" class="btn btn-primary" v-on:click= "searchBills">Search</button>
+      <button type="button" class="btn btn-primary" v-on:click= "searchBills">Search</button>
     </div>
   </div>
 </form>
@@ -40,7 +40,7 @@
     
     <div class="col-sm">
         <ul>
-          <ListItem v-for="item in bills" :key="item.DocumentID" :Title="item.Document" :Description="item.Description"/>
+          <ListItem v-for="item in bills.recordset" :key="item.DocumentID" :Title="item.Document" :Description="item.Description"/>
         </ul>
     </div>
   </div>
@@ -65,7 +65,8 @@ export default {
         {Description: 'Description', Document: 'Document', DocumentID:'id', Status:"Final Reading", Date: '1-1-12'},
       ],
       choice: '*',
-      query: ''
+      query: '',
+      temp:[]
     };
   },
   methods:{
@@ -78,13 +79,20 @@ export default {
       )
 
     },
-    async searchBills(choice, query ){
-      service.searchBills(choice, query).then(
-        (response=>{
-          console.log(response);
-          this.$set(this, 'bills', response.data);
-        }).bind(this)
-      )
+    searchBills(){
+      var i;
+      var count = 0;
+      for (i = 0; i < this.bills.length; i++) {
+      if(this.bills[i].Description.includes(this.query))
+      {
+        this.temp[count]=this.bills[i];
+        count ++;
+      }
+      this.bills = this.temp;
+        
+
+
+      }
 
     }
 
