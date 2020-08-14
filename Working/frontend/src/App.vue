@@ -9,7 +9,7 @@
     <form>
    <div class="form-row" style="margin-left:75px">
     <div class="form-group col-7">
-      <input type="text" class="form-control" id="Search" placeholder="Search">
+      <input type="text" class="form-control" id="Search" placeholder="Search" v-model="query">
     </div>
     <div class="form-group col">
       <select class="form-control" v-model="choice">
@@ -31,7 +31,7 @@
       </select>
     </div>  
     <div class="form-group col">
-      <button type="submit" class="btn btn-primary">Search</button>
+      <button type="submit" class="btn btn-primary" v-on:click= "searchBills">Search</button>
     </div>
   </div>
 </form>
@@ -64,7 +64,8 @@ export default {
       bills: [
         {Description: 'Description', Document: 'Document', DocumentID:'id', Status:"Final Reading", Date: '1-1-12'},
       ],
-      choice: 'All years'
+      choice: '*',
+      query: ''
     };
   },
   methods:{
@@ -76,7 +77,17 @@ export default {
         }).bind(this)
       )
 
+    },
+    async searchBills(choice, query ){
+      service.searchBills(choice, query).then(
+        (response=>{
+          console.log(response);
+          this.$set(this, 'bills', response.data);
+        }).bind(this)
+      )
+
     }
+
   },
   mounted(){
     this.getBills();
