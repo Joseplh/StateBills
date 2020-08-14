@@ -44,49 +44,7 @@ app.get('/', function (req, res) {
 });
 
 
-app.get('/query/:query/year/:year', function (req, res) {
-    
-    var query = req.params.query;
-    var year = req.params.year;
-   
-    var sql = require("mssql");
 
-    // config for your database
-    var config = {//////////////////////////////////////////////////////////////You will need to change these to the credential for the server
-        user: 'javaUser',
-        password: '',
-        server: '192.168.1.73', 
-        database: 'StateBills' ///////////////////////////////////////////////////////////////////////
-    };
-    //192.168.1.73
-    //70.171.162.251:1945
-    // connect to your database
-    sql.connect(config, function (err) {
-    
-        if (err) console.log(err);
-
-        // create Request object
-        var request = new sql.Request();
-         
-        var input = "SELECT * from CombinedTable where Description LIKE " + "'%" +  query + "%'"
-
-        if(year != '*')
-        {
-            input += 'AND Update Date <= ' + year 
-        }
-
-        // query to the database and get the records
-        request.query(input, function (err, recordset) {
-        //request.query('select * from CombinedTable', function (err, recordset) {    
-            
-            if (err) console.log(err)
-
-            // send records as a response
-            res.send(recordset);
-            
-        });
-    });
-});
 
 var server = app.listen(5000, function () {
     console.log('Server is running..');

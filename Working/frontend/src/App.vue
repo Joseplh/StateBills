@@ -80,19 +80,26 @@ export default {
 
     },
     searchBills(){
+      this.getBills();
       var i;
       var count = 0;
-      for (i = 0; i < this.bills.length; i++) {
-      if(this.bills[i].Description.includes(this.query))
+      console.log("Searching");
+      console.log(this.bills.recordset.length);
+      for (i = 0; i < this.bills.recordset.length; i++) {
+          console.log('1');
+      if(this.bills.recordset[i].Description.includes(this.query))
       {
-        this.temp[count]=this.bills[i];
+        this.temp[count]=this.bills.recordset[i];
         count ++;
+      
       }
-      this.bills = this.temp;
+      
         
 
 
       }
+      this.bills.recordset = this.temp;
+      console.log("Done");
 
     }
 
