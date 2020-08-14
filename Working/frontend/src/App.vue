@@ -13,7 +13,7 @@
     </div>
     <div class="form-group col">
       <select class="form-control" v-model="choice">
-        <option selected value = "*">All Years</option>
+        <option selected value = "-">All Years</option>
         <option>2020</option>
         <option>2019</option>
         <option>2018</option>
@@ -64,7 +64,7 @@ export default {
       bills: [
         {Description: 'Description', Document: 'Document', DocumentID:'id', Status:"Final Reading", Date: '1-1-12'},
       ],
-      choice: '*',
+      choice: '-',
       query: '',
       temp:[]
     };
@@ -87,7 +87,7 @@ export default {
       console.log(this.bills.recordset.length);
       for (i = 0; i < this.bills.recordset.length; i++) {
           console.log('1');
-      if(this.bills.recordset[i].Description.includes(this.query))
+      if(this.bills.recordset[i].Description.includes(this.query)&&this.bills.recordset[i].Update_date.includes(this.choice))
       {
         this.temp[count]=this.bills.recordset[i];
         count ++;
