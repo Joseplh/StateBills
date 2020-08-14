@@ -3,13 +3,49 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:10px">
       <h1 class="navbar-brand">Nebraska State Legislature Bills</h1>
     </nav>
+
+
+
+    <form>
+   <div class="form-row" style="margin-left:75px">
+    <div class="form-group col-7">
+      <input type="text" class="form-control" id="Search" placeholder="Search">
+    </div>
+    <div class="form-group col">
+      <select class="form-control" v-model="choice">
+        <option selected value = "*">All Years</option>
+        <option>2020</option>
+        <option>2019</option>
+        <option>2018</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+        <option>2009</option>
+        <option>2008</option>
+        <option>2007</option>
+      </select>
+    </div>  
+    <div class="form-group col">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+</form>
+
+
+    
     <div class="col-sm">
         <ul>
-          <ListItem v-for="item in bills.recordset" :key="item.DocumentID" :Title="item.Document" :Description="item.Description"/>
+          <ListItem v-for="item in bills" :key="item.DocumentID" :Title="item.Document" :Description="item.Description"/>
         </ul>
-      </div>
+    </div>
   </div>
 </template>
+
 
 <script>
 import ListItem from './components/ListItem.vue'
@@ -25,7 +61,10 @@ export default {
   },
   data() {
     return {
-      bills: []
+      bills: [
+        {Description: 'Description', Document: 'Document', DocumentID:'id', Status:"Final Reading", Date: '1-1-12'},
+      ],
+      choice: 'All years'
     };
   },
   methods:{
