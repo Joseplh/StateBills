@@ -24,7 +24,7 @@ public class Main {
 	  
 	//The JDBC connection URL which allows for Windows authentication is defined below.
 	private static String jdbcURL = "jdbc:sqlserver://127.0.0.1:1433;"
-            + "database=TestingDB;"
+            + "database=StateBills;"
             + "user=javaUser;"
             + "password=;"
             + "encrypt=false;"
@@ -48,7 +48,7 @@ public class Main {
 			if(br.readLine().matches("custom=true")) {
 				System.out.println("Input is custom from config.ini");
 				jdbcURL = br.readLine() //"jdbc:sqlserver://127.0.0.1:1433;"
-						+ br.readLine() //"database=TestingDB;"
+						+ br.readLine() //"database=StateBills;"
 						+ br.readLine() //"user=javaUser;"
 						+ br.readLine() //"password=;"
 						+ br.readLine() //"encrypt=false;"
@@ -91,7 +91,7 @@ public class Main {
 	       System.exit(0);
 	    }
 	    //Start loop through csv file and insert into the sql database.
-		CSVBuilder("inputFile.csv");
+		CSVBuilder("download.csv");
 	    try {
 			databaseConnection.close();
 		} catch (SQLException err) {
@@ -175,6 +175,7 @@ public class Main {
 			int ID = -1;
 			int column = 0;
 			while(((fileLine) = br.readLine()) != null) {
+				System.out.println(fileLine);
 				for(int x = 0; x < fileLine.length(); x++) {
 					switch(column) {
 						case 0://Column for Document
@@ -263,7 +264,8 @@ public class Main {
 							}
 							break;
 						case 4://Column for Document ID
-								IDst += fileLine.charAt(x);
+								if(fileLine.charAt(x) != '"')
+									IDst += fileLine.charAt(x);
 								//System.out.println("110:adding char to IDst");
 								if(fileLine.length()==x+1) {
 									column = 0;
@@ -274,7 +276,7 @@ public class Main {
 							throw new Exception("Default case reached for column switch, THIS SHOULD NOT HAPPEN.");
 					}
 				}
-				//System.out.println("Past FOR loop");
+				System.out.println("Past FOR loop");
 				if(column==0) {//at the true end of the row and must reset all values
 					ID = Integer.parseInt(IDst);
 					//System.out.print("doc:"+doc);
