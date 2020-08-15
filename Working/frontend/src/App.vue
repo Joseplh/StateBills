@@ -31,7 +31,7 @@
       </select>
     </div>  
     <div class="form-group col">
-      <button type="button" class="btn btn-primary" v-on:click= "searchBills">Search</button>
+      <button type="button" class="btn btn-primary" v-on:click= "getBills;searchBills">Search</button>
     </div>
   </div>
 </form>
