@@ -80,7 +80,7 @@ export default {
 
     },
     searchBills(){
-      location.reload();
+
       var i;
       var count = 0;
       console.log("Searching");
