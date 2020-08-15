@@ -80,7 +80,7 @@ export default {
 
     },
     searchBills(){
-      this.getBills();
+      //this.getBills();
       var i;
       var count = 0;
       console.log("Searching");
