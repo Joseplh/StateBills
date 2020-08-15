@@ -31,7 +31,7 @@
       </select>
     </div>  
     <div class="form-group col">
-      <button type="button" class="btn btn-primary" v-on:click= "getBills;searchBills">Search</button>
+      <button type="button" class="btn btn-primary" v-on:click= "searchBills">Search</button>
     </div>
   </div>
 </form>
@@ -80,7 +80,7 @@ export default {
 
     },
     searchBills(){
-      //this.getBills();
+      location.reload();
       var i;
       var count = 0;
       console.log("Searching");
