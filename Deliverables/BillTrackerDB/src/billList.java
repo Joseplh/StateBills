@@ -1,4 +1,6 @@
-/*Linked list for bill database in memory*/
+/**
+ * Linked list for bill database in memory
+ */
 public class billList {
 	private objBill node;
 	public void addBill(){

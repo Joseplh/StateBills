@@ -14,9 +14,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.microsoft.sqlserver.jdbc.SQLServerException;
-//Developed by Joseph Maxwell for 
-//consolidating the components into a single main and then attempting to download, compile and upload the database.
-//
+/** 
+ * Developed by Joseph Maxwell for 
+ * consolidating the components into a single main and then attempting to download, compile and upload the database.
+ */
 public class Main {
 	//The SQL Server JDBC Driver is in 
 	//C:\Program Files\Microsoft JDBC Driver 6.0 for SQL Server\sqljdbc_6.0\enu\auth\x64

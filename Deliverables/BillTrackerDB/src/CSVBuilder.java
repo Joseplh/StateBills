@@ -1,7 +1,9 @@
-/*This program is a prof of concept for pulling a csv file into memory and parsing through it.  
+/**
+ * This program is a prof of concept for pulling a csv file into memory and parsing through it.  
  * As the data is parsed through it is then loaded into a linked list which is then sorted afterwards based on the unique ID.
  * Duplicate IDs are the same document under a different legislative body name and should be added as a separate status within the list.
- * This status within a linked list is another simpler linked list that holds the status and date of change.*/
+ * This status within a linked list is another simpler linked list that holds the status and date of change.
+ * */
 import java.io.*;
 
 public class CSVBuilder {

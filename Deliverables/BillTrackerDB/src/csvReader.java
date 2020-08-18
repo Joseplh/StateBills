@@ -1,3 +1,8 @@
+/**
+ * Stand alone method to read and print a CSV file into clean variables
+ * This is for testing purposes and is unconnected to the main.
+ */
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;

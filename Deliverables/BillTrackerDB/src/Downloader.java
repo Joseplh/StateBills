@@ -2,7 +2,10 @@ import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-//Downloader operates by taking the daily session data and stores it in a .csv file called download.csv
+/**
+ * Downloader operates by taking the daily session data and stores it in a .csv file called download.csv
+ * @author Joseph
+ */
 
 public class Downloader {
 	public Downloader() {

@@ -1,3 +1,8 @@
+/**
+ * 
+ * @author Joseph
+ *
+ */
 public class objBill {
     private String doc;		// Document name for this legislative body
     private String intro;	// Primary Introducer is the source of who proposed the bill
