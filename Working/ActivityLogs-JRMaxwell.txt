@@ -4,3 +4,31 @@ Typical examples would include research and local development for the server.
 6/16/2020:  I have created an account with microsoft and downloaded an evaluation edition of microsoft SQL server.  This is going to be the database for the website and
 	along side the SQL server I have also downloaded SQL Server Management Systems that provides a GUI interface for me to interact and change the database.  Although not complete
 	I am importing the current access database to the server and I will provide documentation on how to access and control this in the future.
+6/23/2020: I have got the website running and the Vue works intermittently.  I have created a link to the page on the main menu. 
+7/14/2020: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

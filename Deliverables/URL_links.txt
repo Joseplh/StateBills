@@ -1,0 +1,31 @@
+Joseplh.com
+
+Meetings
+7/23	https://youtu.be/wUQ1hocxULo
+7/16	https://youtu.be/YxSMDYAKWI0
+7/9 	https://youtu.be/2UrTyMFi5eE
+6/25	https://youtu.be/gIFp9f6x8cw
+6/4	https://youtu.be/e6KVtDF6B0A
+
+Joseph Maxwell
+
+Valuable links
+https://nebraskalegislature.gov/bills/search_by_date.php?SessionDay=2020&print=csv
+https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=42429
+
+https://nebraskalegislature.gov/bills/search_by_date.php?SessionDay=2020
+This link was provided by Theresa Ramos who works in Nebraska's internal support.
+This link provides a webpage where a .csv file can be downloaded for the session year.
+Only change the number at the end for the requested year.  It only goes back to 2007.
+
+https://smallbusiness.chron.com/create-display-access-database-data-49070.html
+This article answeres the question, "Can you use Access to build webpages".  This provides a proff of concept for the program.
+
+https://www.baeldung.com/java-download-file
+Java example of downloading a file from online and using it within a java program.
+
+https://alvinalexander.com/java/edu/pj/jdbc/jdbc0002/
+Adding data to a sql table.
+
+https://www.youtube.com/watch?v=IWuuLuoKlLo
+Java JDBC tutorial part 1.  This will allow me to automatically modify the database using java.  

@@ -8,27 +8,27 @@
         <title>
             Joseplh Home Page
         </title>
+		<script src="https://unpkg.com/vue"></script>
     </head>
     <div class="sidenav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="contacts.html">Contact</a>
-        <a href="projects.html">Projects</a>
-        <a href="images.html">Images</a>
-        <a href="videos.html">Videos</a>
-        <a href="dropBox.html">Drop Box</a>
+		<a href="frontend/dist/index.html">Project Page</a>
     </div>
     <div class="body">
         <h1>Home</h1>
-        <p>This website is created by Joseph M. to test and demonstrate </br>
-            his ability to produce and operate a private windows server.</br>
-            This website is also to behave as a private dropbox for Joseph</br>
-            to share school project files between computers and maintain consistency.</br>
-            This has a second goal of demonstrating his ability to protect</br>
-            important files and documents from unauthorized individuals.</br>
-            </br>
-            NOTE: The files within this site are considered unsecure and only</br>
-            sharable files with the general public is allowed here.</br>    
+        <p style="width:50%">This website is created by Joseph M and Marcus Benesch. to test and demonstrate their ability to produce and operate a web application.  The goal of the web application</br>
+			is to pull information from the Nebraska state legislature and present the information in a readable and easily understandable format
+			</br></br>
+			NOTE: This website is named joseplh.com, because it is owned by Joseph.  It is temporarily being used for this application.</br>
+            WARNING: The files within this site are considered unsecure and only sharable files with the general public is allowed here.    
         </p>
+		<div id="app">
+			<iframe src="frontend/dist/index.html" width="80%" height="700px"></iframe>
+		</div>
+		<!-- Vue.js -->
+		<script type="text/javascript" src="https://unpkg.com/vue@2.6.7/dist/vue.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </div>
 </html>

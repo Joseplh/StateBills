@@ -1,11 +1,16 @@
+/**
+ * 
+ * @author Joseph
+ *
+ */
 public class objBill {
-    public String doc;		// Document name for this legislative body
-    public String intro;	// Primary Introducer is the source of who proposed the bill
-    public String stat;	// This is the status of the current bill
-    public String desc;	// general string description of the bill
-    public int ID;			// Unique document ID
-    public boolean isEnd;	// boolean value to mark the end of the linked list
-    public objBill next;	// Next bill in the list
+    private String doc;		// Document name for this legislative body
+    private String intro;	// Primary Introducer is the source of who proposed the bill
+    private String stat;	// This is the status of the current bill
+    private String desc;	// general string description of the bill
+    private int ID;			// Unique document ID
+    private boolean isEnd;	// boolean value to mark the end of the linked list
+    private objBill next;	// Next bill in the list
  
     /** Constructor **/
     public objBill() {//default constructor for initial linked list and end of list.
@@ -25,5 +30,26 @@ public class objBill {
     	this.ID = ID;
     	this.isEnd = false;
     	this.next = next;
+    }
+    public String getDoc() {
+    	return doc;
+    }
+    public String getIntro() {
+    	return intro;
+    }
+    public String getStat() {
+    	return stat;
+    }
+    public String getDesc() {
+    	return desc;
+    }
+    public int getID() {
+    	return ID;
+    }
+    public boolean getIsEnd() {
+    	return isEnd;
+    }
+    public objBill getNext() {
+    	return next;
     }
 }
